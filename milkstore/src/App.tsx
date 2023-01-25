@@ -106,18 +106,19 @@ const App: React.FC = () => {
       }
       { viewingCard && selectedMilk &&
         <>
-          <button onClick={() => setViewingCard(false)}>Back</button>
+          <button className='back-button' onClick={() => setViewingCard(false)}>Back</button>
           <div className='slider-container'>
           <img className='image' src={milkImage} alt='milk' />
             <h2 className='slider-name'>{selectedMilk.name}</h2>
             <p className='slider-type'>Type: {selectedMilk.type}</p>
+            <p className='green'>{selectedMilk.storage} liter</p>
             <Slider
               min={1}
               maxStorage={selectedMilk?.storage}
               value={orderQuantity}
               onChange={(e) => setOrderQuantity(Number(e.target.value))}
             />
-            <Button onClick={handleOrder}>Order</Button>
+            <button className='order-button' onClick={handleOrder}>Order</button>
           </div>
         </>
       }

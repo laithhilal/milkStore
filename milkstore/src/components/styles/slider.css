@@ -3,5 +3,10 @@
 }
 
 label {
-    color: green;
+    color: red;
+}
+
+.slider-input {
+    height: 30px;
+    width: 300px;
 }

@@ -5,6 +5,8 @@
 
 .card {
     background-color: #fff;
+    border: white solid;
+    border-radius: 10px;
 }
 
 .card-image {
