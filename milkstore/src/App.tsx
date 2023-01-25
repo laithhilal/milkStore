@@ -96,11 +96,11 @@ const App: React.FC = () => {
               ))}
           </div>
           <div className="button-container">
-          <Button onClick={() => page === 1 ? null : setPage(page - 1)}>Previous</Button>
+          <Button onClick={() => page === 1 ? null : setPage(page - 1)}>{page === 1 ? '' : (page - 1)}</Button>
           <p className="page-number">{page}</p>
           <Button 
           onClick={() => (page === Math.ceil(filteredMilk.length / 9)) ? null : setPage(page + 1)}
-          disabled={(page * 9) >= filteredMilk.length}>Next</Button>
+          disabled={(page * 9) >= filteredMilk.length}>{page === 11 ? '' : (page + 1)}</Button>
           </div>
         </>
       }
