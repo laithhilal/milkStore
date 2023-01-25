@@ -1,3 +1,27 @@
-img {
+.card {
+    background-color: #fff;
+    width: 200px;   
+    height: 300px;
+}
+
+.card-image {
+    background-color: #f6f6f6;
     width: 100%;
+    height: 70%;
+}
+
+.card-type {
+    color: #adadad;
+}
+
+span {
+    color: green;
+}
+
+span[data-storage='greater-than-25'] {
+    color: green;
+}
+
+span[data-storage='less-than-25'] {
+    color: red;
 }

@@ -11,9 +11,9 @@ interface Props {
 const Card: React.FC<Props> = ({ milk, onClick }) => {
   return (
     <div className='card' onClick={onClick}>
-      <img src={milkImage} alt='milk' />
-      <h2>{milk.name}</h2>
-      <p>Type: {milk.type}</p>
+      <img className='card-image' src={milkImage} alt='milk' />
+      <h4 className='card-name'>{milk.name}</h4>
+      <p className='card-type'>{milk.type} <span data-storage={milk.storage > 25 ? 'greater-than-25' : 'less-than-25'}>{milk.storage}</span></p>
     </div>
   );
 };
