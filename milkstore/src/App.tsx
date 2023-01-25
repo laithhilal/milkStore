@@ -7,6 +7,7 @@ import Button from './components/Button';
 import Header from './components/Header';
 import { Milk } from './types';
 import axios from 'axios';
+import './App.css'
 
 const App: React.FC = () => {
   const [milkData, setMilkData] = useState<Milk[]>([]);
@@ -63,11 +64,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='main'>
       <Header />
       <SearchBar onChange={handleSearch} value={searchTerm} />
       <Filter onChange={handleFilter} />
-      <div>
+      <div className='grid-container'>
         {filteredMilk
           .slice((page - 1) * 9, page * 9)
           .map((milk) => (
