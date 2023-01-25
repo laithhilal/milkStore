@@ -1,17 +1,17 @@
 import React from 'react';
 
 interface Props {
-    min: number;
-    max: number;
-    value: number;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  min: number;
+  maxStorage: number;
+  value: number;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
   
-
-const Slider: React.FC<Props> = ({ min, max, value, onChange }) => {
+const Slider: React.FC<Props> = ({ min, maxStorage, value, onChange }) => {
   return (
     <div className='slider'>
-      <input type="range" min={min} max={max} value={value} onChange={onChange} />
+    <input type="range" min={min} max={maxStorage} value={value} onChange={onChange} />
+      <label>{value}</label>
     </div>
   );
 };

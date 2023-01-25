@@ -85,10 +85,11 @@ const App: React.FC = () => {
           <p>Type: {selectedMilk.type}</p>
           <Slider
             min={1}
-            max={10}
+            maxStorage={selectedMilk?.storage}
             value={orderQuantity}
             onChange={(e) => setOrderQuantity(Number(e.target.value))}
           />
+
           <Button onClick={handleOrder}>Order</Button>
         </div>
       )}
