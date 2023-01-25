@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/slider.css';
 
 interface Props {
   min: number;
@@ -11,7 +12,7 @@ const Slider: React.FC<Props> = ({ min, maxStorage, value, onChange }) => {
   return (
     <div className='slider'>
     <input type="range" min={min} max={maxStorage} value={value} onChange={onChange} />
-      <label>{value}</label>
+    <br></br><label>{value} liter</label>
     </div>
   );
 };

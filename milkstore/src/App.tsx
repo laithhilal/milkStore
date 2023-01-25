@@ -5,6 +5,7 @@ import Filter from './components/Filter';
 import Slider from './components/Slider';
 import Button from './components/Button';
 import Header from './components/Header';
+import milkImage from './components/images/milk.png';
 import { Milk } from './types';
 import axios from 'axios';
 import './App.css'
@@ -106,9 +107,10 @@ const App: React.FC = () => {
       { viewingCard && selectedMilk &&
         <>
           <button onClick={() => setViewingCard(false)}>Back</button>
-          <div>
-            <h2>{selectedMilk.name}</h2>
-            <p>Type: {selectedMilk.type}</p>
+          <div className='slider-container'>
+          <img className='image' src={milkImage} alt='milk' />
+            <h2 className='slider-name'>{selectedMilk.name}</h2>
+            <p className='slider-type'>Type: {selectedMilk.type}</p>
             <Slider
               min={1}
               maxStorage={selectedMilk?.storage}
