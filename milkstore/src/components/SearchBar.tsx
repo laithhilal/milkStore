@@ -1,4 +1,6 @@
 import React from 'react';
+import './styles/searchbar.css';
+
 
 interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

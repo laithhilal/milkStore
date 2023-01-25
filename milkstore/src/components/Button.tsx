@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/button.css';
 
 interface Props {
   onClick: () => void;
@@ -8,7 +9,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({ onClick, children }) => {
   return (
-    <button onClick={onClick}>
+    <button className='button' onClick={onClick}>
       {children}
     </button>
   );

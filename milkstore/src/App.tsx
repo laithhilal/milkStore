@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [selectedMilk, setSelectedMilk] = useState<Milk | null>(null);
   const [orderQuantity, setOrderQuantity] = useState(1);
   const [page, setPage] = useState(1);
-  const [selectedType, setSelectedType] = useState(''); // Add this state variable
+  const [selectedType, setSelectedType] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +36,6 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    // Filter the milkData array based on the searchTerm and selectedType
     setFilteredMilk(milkData.filter((milk) => {
       if (selectedType === '') {
         return milk.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -50,9 +49,19 @@ const App: React.FC = () => {
   }, [searchTerm, milkData, selectedType]);
 
   const handleFilter = (type: string) => {
-    setSelectedType(type); // Update the selectedType state variable
-    // Call setFilteredMilk here to filter the milkData array based on the selectedType value
+    setSelectedType(type);
+    setFilteredMilk(milkData.filter((milk) => {
+      if (selectedType === '') {
+        return milk.name.toLowerCase().includes(searchTerm.toLowerCase());
+      } else {
+        return (
+          milk.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          milk.type.toLowerCase() === selectedType.toLowerCase()
+        );
+      }
+    }));
   };
+  
 
   const handleCardClick = (milk: Milk) => {
     setSelectedMilk(milk);
@@ -93,14 +102,13 @@ const App: React.FC = () => {
           <Button onClick={handleOrder}>Order</Button>
         </div>
       )}
-      <div>
-        <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
+      <div className='button-container'>
+        <Button onClick={() => page === 1 ? null : setPage(page - 1)}>
           Previous
         </Button>
-        <Button
-          onClick={() => setPage(page + 1)}
-          disabled={page * 9 >= filteredMilk.length}
-        >
+        <div className='page-number'>{page}</div>
+        <Button 
+          onClick={() => (page === Math.ceil(filteredMilk.length / 9)) ? null : setPage(page + 1)}> 
           Next
         </Button>
       </div>

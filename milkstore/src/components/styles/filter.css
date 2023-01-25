@@ -1,3 +1,7 @@
 .filter {
     text-align: right;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    margin-right: 250px;
+    padding: 0;
 }
