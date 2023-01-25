@@ -17,6 +17,7 @@ const App: React.FC = () => {
   const [orderQuantity, setOrderQuantity] = useState(1);
   const [page, setPage] = useState(1);
   const [selectedType, setSelectedType] = useState('');
+  const [viewingCard, setViewingCard] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,45 +76,51 @@ const App: React.FC = () => {
   return (
     <div className='main'>
       <Header />
-      <SearchBar onChange={handleSearch} value={searchTerm} />
-      <Filter onChange={handleFilter} />
-      <div className='grid-container'>
-        {filteredMilk
-          .slice((page - 1) * 9, page * 9)
-          .map((milk) => (
-            <Card
-              key={milk.id}
-              milk={milk}
-              onClick={() => handleCardClick(milk)}
+      { !viewingCard && 
+        <>
+          <SearchBar onChange={handleSearch} value={searchTerm} />
+          <Filter onChange={handleFilter} />
+          <div className='grid-container'>
+            {filteredMilk
+              .slice((page - 1) * 9, page * 9)
+              .map((milk) => (
+                <Card
+                  key={milk.id}
+                  milk={milk}
+                  onClick={() => {
+                    setViewingCard(true);
+                    handleCardClick(milk);
+                  }}
+                />
+              ))}
+          </div>
+          <div>
+            <Button onClick={() => page === 1 ? null : setPage(page - 1)}>
+              Previous
+            </Button>
+            <Button 
+              onClick={() => setPage(page + 1)}
+              disabled={(page * 9) >= filteredMilk.length}> Next</Button>
+          </div>
+        </>
+      }
+      { viewingCard && selectedMilk &&
+        <>
+          <button onClick={() => setViewingCard(false)}>Back</button>
+          <div>
+            <h2>{selectedMilk.name}</h2>
+            <p>Type: {selectedMilk.type}</p>
+            <Slider
+              min={1}
+              maxStorage={selectedMilk?.storage}
+              value={orderQuantity}
+              onChange={(e) => setOrderQuantity(Number(e.target.value))}
             />
-          ))}
-      </div>
-      {selectedMilk && (
-        <div>
-          <h2>{selectedMilk.name}</h2>
-          <p>Type: {selectedMilk.type}</p>
-          <Slider
-            min={1}
-            maxStorage={selectedMilk?.storage}
-            value={orderQuantity}
-            onChange={(e) => setOrderQuantity(Number(e.target.value))}
-          />
-
-          <Button onClick={handleOrder}>Order</Button>
-        </div>
-      )}
-      <div className='button-container'>
-        <Button onClick={() => page === 1 ? null : setPage(page - 1)}>
-          Previous
-        </Button>
-        <div className='page-number'>{page}</div>
-        <Button 
-          onClick={() => (page === Math.ceil(filteredMilk.length / 9)) ? null : setPage(page + 1)}> 
-          Next
-        </Button>
-      </div>
+            <Button onClick={handleOrder}>Order</Button>
+          </div>
+        </>
+      }
     </div>
   );
 };
-
 export default App;
