@@ -23,15 +23,15 @@
     border: 1px black solid;
 } 
   .slider-text-container {
-    position: absolute;
-    right: 300px;
-    top: 300px;
+    position: relative;
+    left: 550px;
+    bottom: 100px;
   }
 
   .slider-image {
-    position: absolute;
+    position: relative;
     left: 300px;
-    top: 200px;
+    top: 100px;
     height: 250px;
     width: 200px;
   }
@@ -93,7 +93,7 @@
     background-color: transparent;
     cursor: pointer;
     font-size: 24px;
-    margin-left: 40px;
+    margin-left: 15px;
 }
 
 .previous-button:hover {
@@ -108,4 +108,17 @@
     border: none;
     text-decoration: underline;
     color: rgb(72, 72, 210);
+}
+
+.previous-button:disabled {
+    display: none;
+}
+.next-button:disabled {
+    display: none;
+}
+
+.page-number-label {
+    position: relative;
+    right: 20px;
+    bottom: 20px;
 }

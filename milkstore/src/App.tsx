@@ -100,6 +100,7 @@ const App: React.FC = () => {
           onClick={() => page === 1 ? null : setPage(page - 1)}
           disabled={page === 1}>Prev</button>
           <p className="page-number">{page}</p>
+          <p className='page-number-label'>page</p>
           <button className='next-button'
           onClick={() => (page === Math.ceil(filteredMilk.length / 9)) ? null : setPage(page + 1)}
           disabled={(page * 9) >= filteredMilk.length}>Next</button>
