@@ -17,10 +17,6 @@
     margin-top: 20px;
 }
 
-.page-number {
-    margin: 0 16px;
-}
-
 .slider-container {
     height: 80vh;
     justify-content: center;
@@ -28,18 +24,17 @@
 } 
   .slider-text-container {
     position: absolute;
-    right: 350px;
+    right: 300px;
     top: 300px;
   }
 
   .slider-image {
     position: absolute;
-    left: 350px;
+    left: 300px;
     top: 200px;
     height: 250px;
     width: 200px;
   }
-  
   
 .slider-name {
     font-size: 32px;
@@ -78,4 +73,36 @@
 .slider-storage {
     font-size: 24px;
     color: green;
+}
+
+.page-number {
+    font-size: 24px;
+}
+
+.previous-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 40px;
+}
+
+.next-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 40px;
+}
+
+.previous-button:hover {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
+.next-button:hover {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
 }

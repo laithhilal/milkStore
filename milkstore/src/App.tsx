@@ -96,17 +96,19 @@ const App: React.FC = () => {
               ))}
           </div>
           <div className="button-container">
-          <Button onClick={() => page === 1 ? null : setPage(page - 1)}>{page === 1 ? '' : (page - 1)}</Button>
+          <button className='previous-button'
+          onClick={() => page === 1 ? null : setPage(page - 1)}
+          disabled={page === 1}>Prev</button>
           <p className="page-number">{page}</p>
-          <Button 
+          <button className='next-button'
           onClick={() => (page === Math.ceil(filteredMilk.length / 9)) ? null : setPage(page + 1)}
-          disabled={(page * 9) >= filteredMilk.length}>{page === 11 ? '' : (page + 1)}</Button>
+          disabled={(page * 9) >= filteredMilk.length}>Next</button>
           </div>
         </>
       }
       { viewingCard && selectedMilk &&
         <div className='slider-center-container'>
-          <button className='back-button' onClick={() => setViewingCard(false)}>Back</button>
+          <button className='back-button' onClick={() => setViewingCard(false)}>&larr; Back</button>
           <div className='slider-container'>
           <img className='slider-image' src={milkImage} alt='milk' />
           <div className='slider-text-container'>
