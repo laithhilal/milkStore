@@ -2,7 +2,7 @@
     align-items: center;
 }
 
-label {
+.slider label {
     font-size: 24px;
     color: red;
 }

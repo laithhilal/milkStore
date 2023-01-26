@@ -54,7 +54,7 @@
   }
 
 .order-button:hover {
-    background-color: rgb(118, 222, 118);
+    background-color: rgb(136, 141, 135);
     transition: background-color 0.8s ease;
 }
 
@@ -64,6 +64,7 @@
     background-color: #ffe3e2;
     margin-left: 350px;
     margin-top: 100px;
+    font-size: 24px;
 }
 
 .button {
