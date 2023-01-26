@@ -12,7 +12,7 @@ const Slider: React.FC<Props> = ({ min, maxStorage, value, onChange }) => {
   return (
     <div className='slider'>
     <input className='slider-input' type="range" min={min} max={maxStorage} value={value} onChange={onChange} />
-    <br></br><label>{value} liter</label>
+    <br></br><label>Quantity to order: {value} liter</label>
     </div>
   );
 };

@@ -105,13 +105,14 @@ const App: React.FC = () => {
         </>
       }
       { viewingCard && selectedMilk &&
-        <>
+        <div className='slider-center-container'>
           <button className='back-button' onClick={() => setViewingCard(false)}>Back</button>
           <div className='slider-container'>
-          <img className='image' src={milkImage} alt='milk' />
+          <img className='slider-image' src={milkImage} alt='milk' />
+          <div className='slider-text-container'>
             <h2 className='slider-name'>{selectedMilk.name}</h2>
-            <p className='slider-type'>Type: {selectedMilk.type}</p>
-            <p className='green'>{selectedMilk.storage} liter</p>
+            <p className='slider-type'>{selectedMilk.type}</p>
+            <p className='slider-storage'>{selectedMilk.storage} liter</p>
             <Slider
               min={1}
               maxStorage={selectedMilk?.storage}
@@ -119,8 +120,9 @@ const App: React.FC = () => {
               onChange={(e) => setOrderQuantity(Number(e.target.value))}
             />
             <button className='order-button' onClick={handleOrder}>Order</button>
+            </div>
           </div>
-        </>
+        </div>
       }
     </div>
   );

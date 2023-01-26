@@ -21,23 +21,36 @@
     margin: 0 16px;
 }
 
-.image {
-    width: 200px;
-    height: 250px;
-}
-
 .slider-container {
     height: 80vh;
-    margin-left: 500px;
-    margin-top: 100px;
     justify-content: center;
-}
+    border: 1px black solid;
+} 
+  .slider-text-container {
+    position: absolute;
+    right: 350px;
+    top: 300px;
+  }
 
+  .slider-image {
+    position: absolute;
+    left: 350px;
+    top: 200px;
+    height: 250px;
+    width: 200px;
+  }
+  
+  
 .slider-name {
     font-size: 32px;
 }
 
+.slider-type {
+    font-size: 24px;
+}
+
 .order-button {
+    margin-top: 10px;
     margin-left: 100px;
     border-radius: 5px;
     width: 100px;
@@ -54,14 +67,15 @@
     border: none; 
     cursor: pointer;
     background-color: #ffe3e2;
-    margin-left: 400px;
-    margin-top: 50px;
+    margin-left: 350px;
+    margin-top: 100px;
 }
 
 .button {
     cursor: pointer;
 }
 
-.green {
+.slider-storage {
+    font-size: 24px;
     color: green;
 }

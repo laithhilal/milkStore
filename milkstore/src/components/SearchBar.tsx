@@ -10,7 +10,7 @@ interface Props {
 const SearchBar: React.FC<Props> = ({ onChange, value }) => {
   return (
     <div className='searchbar'>
-      <input type="text" onChange={onChange} value={value} placeholder="Search for milk" />
+      <input type="text" onChange={onChange} value={value} placeholder="Search" />
     </div>
   );
 };
