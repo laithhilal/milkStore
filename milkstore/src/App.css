@@ -85,7 +85,7 @@
     background-color: transparent;
     cursor: pointer;
     font-size: 24px;
-    margin-right: 40px;
+    margin-right: 70px;
 }
 
 .next-button {
@@ -93,7 +93,6 @@
     background-color: transparent;
     cursor: pointer;
     font-size: 24px;
-    margin-left: 15px;
 }
 
 .previous-button:hover {
@@ -119,6 +118,7 @@
 
 .page-number-label {
     position: relative;
-    right: 20px;
+    right: 50px;
     bottom: 20px;
+    text-decoration: underline;
 }
