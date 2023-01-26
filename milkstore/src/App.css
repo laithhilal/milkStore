@@ -100,10 +100,12 @@
     background-color: transparent;
     border: none;
     text-decoration: underline;
+    color: rgb(72, 72, 210);
 }
 
 .next-button:hover {
     background-color: transparent;
     border: none;
     text-decoration: underline;
+    color: rgb(72, 72, 210);
 }
