@@ -33,6 +33,7 @@ const App: React.FC = () => {
   }, []);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPage(1);
     setSearchTerm(e.target.value);
   };
 
@@ -50,6 +51,7 @@ const App: React.FC = () => {
   }, [searchTerm, milkData, selectedType]);
 
   const handleFilter = (type: string) => {
+    setPage(1);
     setSelectedType(type);
     setFilteredMilk(milkData.filter((milk) => {
       if (selectedType === '') {
